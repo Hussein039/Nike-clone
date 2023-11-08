@@ -7,14 +7,13 @@ const SignInSignUpModal = ({ isOpen, onClose, onSignIn }) => {
   const [error, setError] = useState("");
 
   const handleSignIn = () => {
-    // Replace with your actual authentication logic here
     const storedUsername = localStorage.getItem("username");
     const storedPassword = localStorage.getItem("password");
 
     if (username === storedUsername && password === storedPassword) {
       setError("");
       localStorage.setItem("loggedIn", true);
-      onSignIn(true); // Inform the parent component about the successful sign-in
+      onSignIn(true);
       onClose();
     } else {
       setError("Invalid username or password");
@@ -22,7 +21,6 @@ const SignInSignUpModal = ({ isOpen, onClose, onSignIn }) => {
   };
 
   const handleSignUp = () => {
-    // Replace with your actual sign-up logic here
     localStorage.setItem("username", username);
     localStorage.setItem("password", password);
     setError("");
