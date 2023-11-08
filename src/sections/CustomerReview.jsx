@@ -24,6 +24,7 @@ const CustomerReviews = () => {
             feedback={review.feedback}
           />
         ))}
+        
       </div>
     </section>
   );
